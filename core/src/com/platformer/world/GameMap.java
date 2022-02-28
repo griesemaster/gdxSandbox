@@ -1,11 +1,13 @@
 package com.platformer.world;
 
+import com.badlogic.gdx.graphics.OrthographicCamera;
+
 public abstract class GameMap {
 
     /**
      * Rendering utils
      */
-    public abstract void render();
+    public abstract void render(OrthographicCamera camera);
     public abstract void update(float deltaTime);
     public abstract void dispose();
 
@@ -18,8 +20,8 @@ public abstract class GameMap {
      * @return the type of tile at the requested location
      */
     public Tile getTile(int layer, float x, float y){
-        return getTile(layer, x / Tile.TILE_SIZE, y / Tile.TILE_SIZE);
-    };
+        return getTile(layer, (int)(x / Tile.TILE_SIZE), (int)(y / Tile.TILE_SIZE));
+    }
 
     /**
      * Given a layer (foreground or background) get the corresponding tile

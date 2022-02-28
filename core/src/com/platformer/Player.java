@@ -3,8 +3,7 @@ package com.platformer;
 import com.badlogic.gdx.graphics.Texture;
 
 public class Player {
-    private Texture sprite;
-    private final int moveSpeed = 0;
+    private final Texture sprite;
     public int x, y;
 
     public Player(int x, int y){
